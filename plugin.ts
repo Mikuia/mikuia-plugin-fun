@@ -32,7 +32,19 @@ Mikuia.on('identified', () => {
 });
 
 Mikuia.on('event:handler:fun.roll', (event) => {
+    var limit = event.settings.limit;
+
+    if(event.tokens.length > 1 && !event.settings.blockOverride) {
+        var overrideLimit = event.tokens[1];
+        
+        if(!isNaN(overrideLimit)) {
+            limit = parseInt(event.tokens[1]);
+        }
+    }
+
+    var roll = Math.floor(Math.random() * limit);
+
     Mikuia.respond(event, {
-        message: 'Hi!'
+        message: 'You rolled ' + roll + '.'
     });
 })
