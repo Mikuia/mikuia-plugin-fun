@@ -34,8 +34,8 @@ Mikuia.on('identified', () => {
 Mikuia.on('event:handler:fun.roll', (event) => {
     var limit = event.settings.limit;
 
-    if(event.tokens.length > 1 && !event.settings.blockOverride && !isNaN(event.tokens[1])) {
-        limit = parseInt(event.tokens[1]);
+    if(event.tokens.length > 1 && !event.settings.blockOverride) {
+        limit = event.tokens[1];
     }
 
     var roll = Math.floor(Math.random() * limit);
