@@ -1,0 +1,15 @@
+{
+	"fun.roll": {
+		"description": "Rolls a dice.",
+		"settings": {
+			"limit": {
+				"name": "Limit",
+				"description": "Maximum number that can be rolled."
+			},
+			"blockOverride": {
+				"name": "Block Overriding",
+				"description": "Don't let users provide their own roll limit."
+			}
+		}
+	}
+}

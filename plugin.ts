@@ -11,19 +11,15 @@ Mikuia.on('connected', () => {
 });
 
 Mikuia.on('identified', () => {
+	Mikuia.registerLocales();
 	Mikuia.registerHandler('fun.roll', {
-		description: 'Rolls a dice.',
 		anonymous: true,
 		settings: {
 			limit: {
-				name: 'Limit',
-				description: 'Maximum number that can be rolled.',
 				default: 100,
 				type: 'number'
 			},
 			blockOverride: {
-				name: 'Block Overriding',
-				description: 'Don\'t let users provide their own roll limit.',
 				default: false,
 				type: 'boolean'
 			}
